@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name ="Amazon Test Script" parallel="false">
+<suite name ="NYPostTest Script" parallel="false">
 
-    <parameter name="url" value="https://nypost.com"></parameter>
+    <parameter name="url" value="https://nypost.com/"></parameter>
 
     <test name = "NYPost Home">
 
         <classes>
             <class name="News.TestNews"></class>
+            <class name="News.TestNewsSection"></class>
         </classes>
 
     </test>
