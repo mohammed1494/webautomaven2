@@ -98,6 +98,25 @@ public class CommonApi {
             }
         }
     }
+    public String getWebText(String locator){
+        String text = "";
+        try {
+           text = driver.findElement(By.cssSelector(locator)).getText();
+        }catch (Exception ex1){
+            try{
+             text = driver.findElement(By.className(locator)).getText();
+            }catch (Exception ex2){
+                try{
+              text = driver.findElement(By.id(locator)).getText();
+                }catch (Exception ex3){
+               text = driver.findElement(By.xpath(locator)).getText();
+                }
+            }
+        }
+        return text;
+    }
+
+
     public List<WebElement> getListOfWebElements(String locator){
         List<WebElement> elementList = driver.findElements(By.cssSelector(locator));
         return elementList;
